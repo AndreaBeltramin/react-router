@@ -1,7 +1,14 @@
 import PostCard from "../../components/postCard";
+import { useEffect, useState } from "react";
 
 export default function IndexPosts() {
 	const apiUrl = import.meta.env.VITE_API_URL;
+
+	fetch(apiUrl + "/posts")
+		.then((res) => res.json())
+		.then((data) => {
+			console.log(data);
+		});
 
 	return (
 		<>
