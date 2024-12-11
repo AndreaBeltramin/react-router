@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PostCard from "../../components/postCard";
 import { useEffect, useState } from "react";
 
@@ -27,11 +28,23 @@ export default function IndexPosts() {
 								<div className="card">
 									<img src={post.img} className="card-img-top" alt="..." />
 									<div className="card-body">
-										<h5 className="card-title">{post.title}</h5>
-										<p className="card-text">{post.content}</p>
-										<a href="#" className="btn btn-primary">
-											Scopri di più
-										</a>
+										<h5 className="card-title">{post.title.toUpperCase()}</h5>
+										<div className="card-text">
+											{post.content}
+											<div>
+												<span className="badge bg-info p-2">
+													{post.category}
+												</span>
+											</div>
+										</div>
+										<Link
+											to={`/posts/${post.id}`}
+											type="button"
+											className="btn btn-primary mt-2"
+										>
+											Mostra post nel dettaglio
+											<i className="fa-solid fa-eye ms-2 text-dark"></i>
+										</Link>
 									</div>
 								</div>
 							</div>

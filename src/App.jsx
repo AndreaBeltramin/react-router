@@ -18,7 +18,7 @@ function App() {
 					<Route path="/" Component={HomePage} />
 					<Route path="/posts">
 						<Route index Component={IndexPosts} />
-						<Route path="showPosts" Component={ShowPosts} />
+						<Route path=":id" Component={ShowPosts} />
 					</Route>
 					<Route path="/aboutUs" Component={AboutUsPage} />
 				</Route>
