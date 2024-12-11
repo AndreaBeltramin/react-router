@@ -6,8 +6,8 @@ import DefaultLayout from "./layouts/DefaultLayout";
 
 //import Pages
 import HomePage from "./pages/HomePage";
-import IndexPosts from "./pages/posts/IndexPosts";
 import AboutUsPage from "./pages/AboutUsPage";
+import IndexPosts from "./pages/posts/IndexPosts";
 import ShowPosts from "./pages/posts/ShowPosts";
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
 			<Routes>
 				<Route Component={DefaultLayout}>
 					<Route path="/" Component={HomePage} />
-					<Route path="/posts" Component={IndexPosts}>
-						<Route index />
+					<Route path="/posts">
+						<Route index Component={IndexPosts} />
 						<Route path="showPosts" Component={ShowPosts} />
 					</Route>
 					<Route path="/aboutUs" Component={AboutUsPage} />
