@@ -5,7 +5,7 @@ export default function Navbar() {
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container">
 				<a className="navbar-brand" href="#">
-					Navbar
+					React project
 				</a>
 				<button
 					className="navbar-toggler"
@@ -26,8 +26,8 @@ export default function Navbar() {
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/products">
-								Products
+							<Link className="nav-link" to="/posts">
+								Post
 							</Link>
 						</li>
 						<li className="nav-item">

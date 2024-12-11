@@ -1,10 +1,10 @@
-import PorductCard from "../components/productCard";
+import PostCard from "../../components/postCard";
 
-export default function ProductsPage() {
+export default function IndexPosts() {
 	return (
 		<>
 			<div className="container mt-5">
-				<h1>Products</h1>
+				<h1>Posts</h1>
 				<ul>
 					<li>Lorem ipsum dolor sit amet.</li>
 					<li>Lorem ipsum dolor sit amet.</li>
@@ -24,18 +24,18 @@ export default function ProductsPage() {
 				</ul>
 
 				<div className="row row-cols-4 g-3 mb-5">
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
-					<PorductCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
+					<PostCard />
 				</div>
 			</div>
 		</>
