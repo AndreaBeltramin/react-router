@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function IndexPosts() {
 	const apiUrl = import.meta.env.VITE_API_URL;
 	const [posts, setPosts] = useState([]);
+
 	useEffect(() => {
 		fetchIndexPosts();
 	}, []);
