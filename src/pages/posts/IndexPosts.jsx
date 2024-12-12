@@ -54,13 +54,6 @@ export default function IndexPosts() {
 				) : (
 					<h2>Nessun post da visualizzare</h2>
 				)}
-
-				<div className="row row-cols-4 g-3 mb-5">
-					<PostCard />
-					<PostCard />
-					<PostCard />
-					<PostCard />
-				</div>
 			</div>
 		</>
 	);
