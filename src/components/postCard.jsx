@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import ShowDetailsButton from "./ShowDetailsButton";
+import DeletePostButton from "./DeletePostButton";
+
 export default function PostCard(props) {
 	return (
 		<div className="col" key={props.id}>
@@ -12,14 +14,10 @@ export default function PostCard(props) {
 							<span className="badge bg-info p-2">{props.category}</span>
 						</div>
 					</div>
-					<Link
-						to={`/posts/${props.id}`}
-						type="button"
-						className="btn btn-primary mt-2"
-					>
-						Mostra post nel dettaglio
-						<i className="fa-solid fa-eye ms-2 text-dark"></i>
-					</Link>
+					<div className="d-flex justify-content-between">
+						<ShowDetailsButton id={props.id} />
+						<DeletePostButton id={props.id} />
+					</div>
 				</div>
 			</div>
 		</div>

@@ -43,7 +43,7 @@ export default function ShowPosts() {
 					<div className="d-flex mb-3">
 						<h1 className="m-0">{post.title.toUpperCase()}</h1>
 						<Link
-							to={"/posts"}
+							to={-1}
 							type="button"
 							className="btn btn-primary ms-5 align-self-center"
 						>

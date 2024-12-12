@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import PostCard from "../../components/PostCard";
+import DeleteModal from "../../components/DeleteModal";
+
 import { useEffect, useState } from "react";
 
 export default function IndexPosts() {
@@ -18,6 +19,7 @@ export default function IndexPosts() {
 				setPosts(data);
 			});
 	};
+
 	return (
 		<>
 			<div className="container mt-5">
@@ -38,6 +40,10 @@ export default function IndexPosts() {
 					<h2>Nessun post da visualizzare</h2>
 				)}
 			</div>
+
+			{posts.map((post, index) => (
+				<DeleteModal key={index} id={post.id} />
+			))}
 		</>
 	);
 }
