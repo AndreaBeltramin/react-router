@@ -1,4 +1,35 @@
+import { useState, useEffect } from "react";
+
 export default function DeleteModal(props) {
+	const apiUrl = import.meta.env.VITE_API_URL;
+	const [posts, setPosts] = useState([]);
+
+	useEffect(() => {
+		fetchIndexPosts();
+	}, []);
+
+	const fetchIndexPosts = () => {
+		fetch(apiUrl + "/posts")
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setPosts(data);
+			});
+	};
+
+	const fetchDeletePost = (id) => {
+		const deleteUrl = `${apiUrl}/posts/${id}`;
+		fetch(deleteUrl, { method: "DELETE" })
+			.then((res) => res)
+			.then(() => {
+				fetchIndexPosts();
+			});
+	};
+
+	const handleDeletePostButton = (id) => {
+		fetchDeletePost(id);
+	};
+
 	return (
 		<div
 			className="modal fade"
@@ -36,6 +67,7 @@ export default function DeleteModal(props) {
 							type="button"
 							className="btn btn-danger"
 							data-bs-dismiss="modal"
+							onClick={() => handleDeletePostButton(props.id)}
 						>
 							Elimina
 						</button>
